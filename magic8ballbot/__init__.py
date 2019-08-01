@@ -121,7 +121,7 @@ def get_message(message):
 	
 keyboard = create_lang_keyboard()
 try:
-	magic8ballbot.polling(none_stop=True, interval=10)
+	magic8ballbot.polling(none_stop=True, interval=1)
 except Exception as ex:
 	time.sleep(5)
 	print("Internet error!")
