@@ -1,8 +1,24 @@
+#!/usr/bin/env python
+
+"""
+Magic 8 Ball Bot will predict you future as real magic 8 ball.
+
+Say ``/start`` and go!
+"""
+
 import telebot
 import time
 import random
 import os
 # from telebot import apihelper
+
+# define metadata
+__version__     = "1.0.0"
+__author__      = "Vladimir Saltykov"
+__copyright__   = "Copyright 2019, %s" % __author__
+__email__       = "vowatchka@mail.ru"
+__license__     = "MIT"
+__date__        = "2019-08-01"
 
 # proxy settings
 # apihelper.proxy = {
@@ -81,6 +97,7 @@ def select_lang(message):
 		magic8ballbot.send_message(message.from_user.id, PHRASES["unknown_lang"], reply_markup=keyboard)
 		return
 	
+	# reply and hide keyboard
 	magic8ballbot.send_message(message.from_user.id, PHRASES["selected_lang"][lang], reply_markup=telebot.types.ReplyKeyboardRemove())
 	magic8ballbot.send_message(message.from_user.id, PHRASES["offer_to_ask"][lang])
 	
@@ -102,11 +119,11 @@ def get_message(message):
 	else:
 		predict_future(message)
 	
-
-keyboard = create_lang_keyboard()
-try:
-	magic8ballbot.polling(none_stop=True, interval=0)
-except Exception as ex:
-	time.sleep(5)
-	print("Internet error!")
-	print(ex)
+if __name__ == "__main__":
+	keyboard = create_lang_keyboard()
+	try:
+		magic8ballbot.polling(none_stop=True, interval=0)
+	except Exception as ex:
+		time.sleep(5)
+		print("Internet error!")
+		print(ex)
