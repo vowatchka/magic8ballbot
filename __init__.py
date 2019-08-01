@@ -119,11 +119,10 @@ def get_message(message):
 	else:
 		predict_future(message)
 	
-if __name__ == "__main__":
-	keyboard = create_lang_keyboard()
-	try:
-		magic8ballbot.polling(none_stop=True, interval=0)
-	except Exception as ex:
-		time.sleep(5)
-		print("Internet error!")
-		print(ex)
+keyboard = create_lang_keyboard()
+try:
+	magic8ballbot.polling(none_stop=True, interval=0)
+except Exception as ex:
+	time.sleep(5)
+	print("Internet error!")
+	print(ex)
