@@ -47,7 +47,7 @@ PHRASES = {
 # phrase types
 PHRASE_TYPES = ["positive", "hesitantly_positive", "neutral", "negative"]
 
-TG_TOKEN = "676947035:AAHVq3G5gr2Y-6p5CCsrjsFhaRUyC7d2D_0"
+# TG_TOKEN = ""
 
 # bot
 magic8ballbot = telebot.TeleBot("676947035:AAHVq3G5gr2Y-6p5CCsrjsFhaRUyC7d2D_0")
