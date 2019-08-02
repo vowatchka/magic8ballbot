@@ -1,1 +1,1 @@
-web: python magic8ballbot/__init__.py
+worker: python magic8ballbot/__init__.py
